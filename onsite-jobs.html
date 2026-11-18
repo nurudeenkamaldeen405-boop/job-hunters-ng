@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find on-site job opportunities across Nigeria.">
+    <title>On-site Jobs | Job Hunters NG</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header class="site-header">
+    <div class="container header-content">
+        <a href="index.html" class="logo">JOB HUNTERS <span>NG</span></a>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="remote-jobs.html">Remote Jobs</a>
+            <a href="onsite-jobs.html" class="active">On-site Jobs</a>
+            <a href="courses.html">Free Courses</a>
+            <a href="communities.html">Communities</a>
+            <a href="about.html">About</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <h1>On-site Job Opportunities</h1>
+            <p>Discover job opportunities across Nigeria and find your next career opportunity.</p>
+        </div>
+    </section>
+
+    <section class="jobs-section">
+        <div class="container">
+
+            <div class="job-filters">
+                <input
+                    type="search"
+                    id="jobSearch"
+                    placeholder="Search job title or company..."
+                >
+
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                </select>
+
+                <select id="experienceFilter">
+                    <option value="">All Experience Levels</option>
+                    <option value="Entry Level">Entry Level</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Mid Level">Mid Level</option>
+                    <option value="Senior">Senior</option>
+                    <option value="No Experience">No Experience</option>
+                </select>
+            </div>
+
+            <div class="jobs-heading">
+                <h2>Available On-site Jobs</h2>
+                <p id="jobCount">Loading jobs...</p>
+            </div>
+
+            <div id="jobsList" class="jobs-grid">
+                <p>Loading on-site jobs...</p>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; <span id="currentYear"></span> Job Hunters NG. All rights reserved.</p>
+        <p>Connecting Nigerians to Opportunities.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/jobs.js"></script>
+
+</body>
+  </html>
