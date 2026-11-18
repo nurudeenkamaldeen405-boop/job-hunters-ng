@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details | Job Hunters NG</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header class="site-header">
+    <div class="container header-content">
+        <a href="index.html" class="logo">JOB HUNTERS <span>NG</span></a>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="remote-jobs.html">Remote Jobs</a>
+            <a href="onsite-jobs.html">On-site Jobs</a>
+            <a href="courses.html">Free Courses</a>
+            <a href="communities.html">Communities</a>
+            <a href="about.html">About</a>
+        </nav>
+    </div>
+</header>
+
+<main class="jobs-section">
+    <div class="container">
+
+        <a href="remote-jobs.html">← Back to Remote Jobs</a>
+
+        <div id="jobDetails">
+            <p>Loading job details...</p>
+        </div>
+
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; <span id="currentYear"></span> Job Hunters NG. All rights reserved.</p>
+        <p>Connecting Nigerians to Opportunities.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/job-details.js"></script>
+
+</body>
+  </html>
