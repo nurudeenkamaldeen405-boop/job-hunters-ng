@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover free online courses and learning opportunities.">
+    <title>Free Courses | Job Hunters NG</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header class="site-header">
+    <div class="container header-content">
+        <a href="index.html" class="logo">JOB HUNTERS <span>NG</span></a>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="remote-jobs.html">Remote Jobs</a>
+            <a href="onsite-jobs.html">On-site Jobs</a>
+            <a href="courses.html" class="active">Free Courses</a>
+            <a href="communities.html">Communities</a>
+            <a href="about.html">About</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <h1>Free Online Courses</h1>
+            <p>Learn new skills, improve your knowledge and prepare for better opportunities.</p>
+        </div>
+    </section>
+
+    <section class="jobs-section">
+        <div class="container">
+
+            <div class="job-filters">
+                <input
+                    type="search"
+                    id="courseSearch"
+                    placeholder="Search courses or platforms..."
+                >
+
+                <select id="courseCategory">
+                    <option value="">All Categories</option>
+                </select>
+            </div>
+
+            <div class="jobs-heading">
+                <h2>Explore Free Courses</h2>
+                <p id="courseCount">Loading courses...</p>
+            </div>
+
+            <div id="coursesList" class="jobs-grid">
+                <p>Loading courses...</p>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; <span id="currentYear"></span> Job Hunters NG. All rights reserved.</p>
+        <p>Connecting Nigerians to Opportunities.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/courses.js"></script>
+
+</body>
+                                                                </html>
