@@ -1,1 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Job Hunters NG</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header class="site-header">
+    <div class="container header-content">
+        <a href="index.html" class="logo">JOB HUNTERS <span>NG</span></a>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="remote-jobs.html">Remote Jobs</a>
+            <a href="onsite-jobs.html">On-site Jobs</a>
+            <a href="courses.html">Free Courses</a>
+            <a href="communities.html">Communities</a>
+            <a href="about.html">About</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We would love to hear from you.</p>
+        </div>
+    </section>
+
+    <section class="jobs-section">
+        <div class="container">
+
+            <div class="job-card">
+                <h2>Get in Touch</h2>
+
+                <p>
+                    Have a question, want to advertise a vacancy,
+                    or want to partner with us?
+                    Send us a message.
+                </p>
+
+                <form id="contactForm">
+
+                    <label for="contactName">Your Name</label>
+                    <input
+                        type="text"
+                        id="contactName"
+                        required
+                        placeholder="Enter your name"
+                    >
+
+                    <label for="contactEmail">Email Address</label>
+                    <input
+                        type="email"
+                        id="contactEmail"
+                        required
+                        placeholder="Enter your email"
+                    >
+
+                    <label for="contactSubject">Subject</label>
+                    <input
+                        type="text"
+                        id="contactSubject"
+                        required
+                        placeholder="Enter subject"
+                    >
+
+                    <label for="contactMessage">Your Message</label>
+                    <textarea
+                        id="contactMessage"
+                        rows="6"
+                        required
+                        placeholder="Write your message..."
+                    ></textarea>
+
+                    <button type="submit" class="btn btn-primary">
+                        Send Message
+                    </button>
+
+                    <p id="contactStatus"></p>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; <span id="currentYear"></span> Job Hunters NG. All rights reserved.</p>
+        <p>Connecting Nigerians to Opportunities.</p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("contactName").value.trim();
+        const email = document.getElementById("contactEmail").value.trim();
+        const subject = document.getElementById("contactSubject").value.trim();
+        const message = document.getElement
