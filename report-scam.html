@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Job Scam | Job Hunters NG</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header class="site-header">
+    <div class="container header-content">
+        <a href="index.html" class="logo">JOB HUNTERS <span>NG</span></a>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="remote-jobs.html">Remote Jobs</a>
+            <a href="onsite-jobs.html">On-site Jobs</a>
+            <a href="courses.html">Free Courses</a>
+            <a href="communities.html">Communities</a>
+            <a href="about.html">About</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <h1>Report a Suspicious Job</h1>
+            <p>Help us protect job seekers by reporting suspicious vacancies.</p>
+        </div>
+    </section>
+
+    <section class="jobs-section">
+        <div class="container">
+
+            <div class="job-card">
+                <h2>Submit a Job Scam Report</h2>
+
+                <p>
+                    If you encounter a suspicious vacancy, provide
+                    the details below. Please submit accurate information.
+                </p>
+
+                <form id="scamReportForm">
+
+                    <label for="reporterName">Your Name (Optional)</label>
+                    <input type="text" id="reporterName"
+                        placeholder="Your name">
+
+                    <label for="reporterEmail">Your Email (Optional)</label>
+                    <input type="email" id="reporterEmail"
+                        placeholder="Your email address">
+
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" id="jobTitle" required
+                        placeholder="Enter the job title">
+
+                    <label for="companyName">Company or Recruiter Name</label>
+                    <input type="text" id="companyName" required
+                        placeholder="Enter company name">
+
+                    <label for="jobLink">Job Advertisement Link (Optional)</label>
+                    <input type="url" id="jobLink"
+                        placeholder="https://example.com">
+
+                    <label for="reportReason">Reason for Reporting</label>
+                    <select id="reportReason" required>
+                        <option value="">Select a reason</option>
+                        <option value="Payment request">Asked for payment</option>
+                        <option value="Fake recruitment">Fake recruitment</option>
+                        <option value="Personal information request">Suspicious personal information request</option>
+                        <option value="False job advertisement">False job advertisement</option>
+                        <option value="Other">Other suspicious activity</option>
+                    </select>
+
+                    <label for="reportDetails">Explain What Happened</label>
+                    <textarea id="reportDetails" rows="6" required
+                        minlength="10"
+                        placeholder="Describe why you believe this job is suspicious..."></textarea>
+
+                    <button type="submit" class="btn btn-primary">
+                        Submit Report
+                    </button>
+
+                    <p id="reportStatus"></p>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; <span id="currentYear"></span> Job Hunters NG. All rights reserved.</p>
+        <p>Connecting Nigerians to Opportunities.</p>
+    </div>
+</footer>
+
+<script>
+document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+  </html>
