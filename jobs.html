@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Jobs | Job Hunters NG</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <h2>JOB HUNTERS NG</h2>
+
+        <a href="dashboard.html" class="btn btn-primary">
+            Dashboard
+        </a>
+    </header>
+
+    <main class="admin-container">
+
+        <h1>Manage Jobs</h1>
+
+        <p>Add and manage job opportunities on your platform.</p>
+
+        <section class="admin-management">
+
+            <h2 id="jobFormTitle">Add New Job</h2>
+
+            <form id="adminJobForm">
+
+                <input type="hidden" id="jobId">
+
+                <label>Job Title</label>
+                <input type="text" id="jobTitle" required>
+
+                <label>Company Name</label>
+                <input type="text" id="companyName" required>
+
+                <label>Category</label>
+                <select id="jobCategory" required>
+                    <option value="">Select Category</option>
+                </select>
+
+                <label>Job Type</label>
+                <select id="jobType" required>
+                    <option value="remote">Remote</option>
+                    <option value="onsite">On-site</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+
+                <label>Employment Type</label>
+                <input type="text" id="employmentType"
+                    placeholder="Full-time, Part-time, Contract">
+
+                <label>Location</label>
+                <input type="text" id="jobLocation">
+
+                <label>State</label>
+                <input type="text" id="jobState">
+
+                <label>Salary</label>
+                <input type="text" id="jobSalary">
+
+                <label>Experience Required</label>
+                <input type="text" id="jobExperience"
+                    placeholder="Entry Level, 2 years, etc.">
+
+                <label>Job Description</label>
+                <textarea id="jobDescription" rows="5" required></textarea>
+
+                <label>Requirements</label>
+                <textarea id="jobRequirements" rows="5"></textarea>
+
+                <label>Application Link</label>
+                <input type="url" id="applicationUrl">
+
+                <label>Application Email</label>
+                <input type="email" id="applicationEmail">
+
+                <label>Original Job Source Link</label>
+                <input type="url" id="sourceUrl">
+
+                <label>Application Deadline</label>
+                <input type="date" id="jobDeadline">
+
+                <label>Job Expiry Date</label>
+                <input type="date" id="jobExpiry">
+
+                <label>Job Status</label>
+                <select id="jobStatus">
+                    <option value="draft">Save as Draft</option>
+                    <option value="published">Publish Job</option>
+                </select>
+
+                <label>
+                    <input type="checkbox" id="jobFeatured">
+                    Featured Job
+                </label>
+
+                <label>
+                    <input type="checkbox" id="jobVerified">
+                    Verified Job
+                </label>
+
+                <button type="submit" class="btn btn-primary">
+                    Save Job
+                </button>
+
+                <button type="button" id="cancelEdit" class="btn">
+                    Cancel Editing
+                </button>
+
+                <p id="jobFormMessage" role="status"></p>
+
+            </form>
+
+        </section>
+
+        <section class="admin-management">
+
+            <h2>Existing Jobs</h2>
+
+            <div id="adminJobsList">
+                Loading jobs...
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/admin-jobs.js"></script>
+
+</body>
+  </html>
