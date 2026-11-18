@@ -62,12 +62,40 @@
                 <label>State</label>
                 <input type="text" id="jobState">
 
-                <label>Salary</label>
-                <input type="text" id="jobSalary">
+                <label>Minimum Salary</label>
+<input type="number" id="salaryMin" min="0">
 
-                <label>Experience Required</label>
-                <input type="text" id="jobExperience"
-                    placeholder="Entry Level, 2 years, etc.">
+<label>Maximum Salary</label>
+<input type="number" id="salaryMax" min="0">
+
+<label>Salary Currency</label>
+<select id="salaryCurrency">
+    <option value="NGN">NGN (₦)</option>
+    <option value="USD">USD ($)</option>
+    <option value="GBP">GBP (£)</option>
+    <option value="EUR">EUR (€)</option>
+</select>
+
+<label>Salary Period</label>
+<select id="salaryPeriod">
+    <option value="monthly">Monthly</option>
+    <option value="yearly">Yearly</option>
+    <option value="weekly">Weekly</option>
+    <option value="daily">Daily</option>
+    <option value="hourly">Hourly</option>
+    <option value="negotiable">Negotiable</option>
+</select>
+
+<label>Experience Level</label>
+<select id="experienceLevel">
+    <option value="">Select Experience</option>
+    <option value="No Experience">No Experience</option>
+    <option value="Entry Level">Entry Level</option>
+    <option value="Junior">Junior</option>
+    <option value="Mid Level">Mid Level</option>
+    <option value="Senior">Senior</option>
+    <option value="Executive">Executive</option>
+                                             </select>
 
                 <label>Job Description</label>
                 <textarea id="jobDescription" rows="5" required></textarea>
