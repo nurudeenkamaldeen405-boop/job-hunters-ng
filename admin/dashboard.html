@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Admin Dashboard | Job Hunters NG</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <h2>JOB HUNTERS NG</h2>
+
+        <button id="logoutButton" class="btn btn-primary">
+            Logout
+        </button>
+    </header>
+
+    <main class="admin-container">
+
+        <h1>Admin Dashboard</h1>
+
+        <p>Welcome! Manage your job platform from here.</p>
+
+        <section class="admin-stats">
+
+            <div class="admin-stat-card">
+                <h3>Total Jobs</h3>
+                <p id="adminTotalJobs">0</p>
+            </div>
+
+            <div class="admin-stat-card">
+                <h3>Remote Jobs</h3>
+                <p id="adminRemoteJobs">0</p>
+            </div>
+
+            <div class="admin-stat-card">
+                <h3>On-site Jobs</h3>
+                <p id="adminOnsiteJobs">0</p>
+            </div>
+
+            <div class="admin-stat-card">
+                <h3>Courses</h3>
+                <p id="adminTotalCourses">0</p>
+            </div>
+
+            <div class="admin-stat-card">
+                <h3>Subscribers</h3>
+                <p id="adminSubscribers">0</p>
+            </div>
+
+            <div class="admin-stat-card">
+                <h3>Expired Jobs</h3>
+                <p id="adminExpiredJobs">0</p>
+            </div>
+
+        </section>
+
+        <section class="admin-management">
+
+            <h2>Content Management</h2>
+
+            <div class="admin-actions">
+
+                <a href="jobs.html" class="btn btn-primary">
+                    Manage Jobs
+                </a>
+
+                <a href="courses.html" class="btn btn-primary">
+                    Manage Courses
+                </a>
+
+                <a href="communities.html" class="btn btn-primary">
+                    Manage Communities
+                </a>
+
+                <a href="subscribers.html" class="btn btn-primary">
+                    View Subscribers
+                </a>
+
+                <a href="../index.html" class="btn btn-primary">
+                    View Website
+                </a>
+
+            </div>
+
+        </section>
+
+        <p id="adminMessage" role="status"></p>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/admin.js"></script>
+
+</body>
+  </html>
