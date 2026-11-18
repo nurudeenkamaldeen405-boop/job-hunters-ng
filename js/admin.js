@@ -3,7 +3,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
 
     const db = window.jhnSupabase;
-
     const message = document.getElementById("adminMessage");
     const logoutButton = document.getElementById("logoutButton");
 
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         return;
     }
 
-    // Protect the dashboard
+    // Check login session
     const { data: sessionData } = await db.auth.getSession();
 
     if (!sessionData.session) {
@@ -41,24 +40,39 @@ document.addEventListener("DOMContentLoaded", async function () {
         window.location.href = "login.html";
     });
 
-    // Get database record counts
+    // Count records in a table
     async function getCount(table, filters = []) {
 
         let query = db
             .from(table)
-            .select("id", { count: "exact", head: true });
+            .select("*", { count: "exact", head: true });
 
         filters.forEach(filter => {
-            query = query[filter.method](
-                filter.column,
-                filter.value
-            );
+            query = query.eq(filter.column, filter.value);
         });
 
         const { count, error } = await query;
 
         if (error) {
-            console.error(table + " count error:", error.message);
+            console.error(table + " error:", error.message);
+            return "—";
+        }
+
+        return count ?? 0;
+    }
+
+    // Count expired jobs
+    async function getExpiredJobs() {
+
+        const now = new Date().toISOString();
+
+        const { count, error } = await db
+            .from("jobs")
+            .select("*", { count: "exact", head: true })
+            .or(`status.eq.expired,expires_at.lt.${now}`);
+
+        if (error) {
+            console.error("Expired jobs error:", error.message);
             return "—";
         }
 
@@ -68,39 +82,23 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Load dashboard statistics
     async function loadStatistics() {
 
-        const now = new Date().toISOString();
-
         const statistics = await Promise.all([
 
             getCount("jobs"),
 
             getCount("jobs", [
-                {
-                    method: "eq",
-                    column: "job_type",
-                    value: "remote"
-                }
+                { column: "job_type", value: "remote" }
             ]),
 
             getCount("jobs", [
-                {
-                    method: "eq",
-                    column: "job_type",
-                    value: "onsite"
-                }
+                { column: "job_type", value: "onsite" }
             ]),
 
             getCount("courses"),
 
             getCount("subscribers"),
 
-            getCount("jobs", [
-                {
-                    method: "or",
-                    column: "filter",
-                    value: "status.eq.expired,expires_at.lt." + now
-                }
-            ])
+            getExpiredJobs()
 
         ]);
 
