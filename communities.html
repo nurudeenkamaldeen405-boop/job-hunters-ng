@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find job opportunity communities across Nigeria.">
+    <title>Communities | Job Hunters NG</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header class="site-header">
+    <div class="container header-content">
+        <a href="index.html" class="logo">JOB HUNTERS <span>NG</span></a>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="remote-jobs.html">Remote Jobs</a>
+            <a href="onsite-jobs.html">On-site Jobs</a>
+            <a href="courses.html">Free Courses</a>
+            <a href="communities.html" class="active">Communities</a>
+            <a href="about.html">About</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Job Hunters NG Communities</h1>
+            <p>Connect with other job seekers, share opportunities and discover jobs in your state.</p>
+        </div>
+    </section>
+
+    <section class="jobs-section">
+        <div class="container">
+
+            <div class="jobs-heading">
+                <h2>Find Your State Community</h2>
+                <p>Select your state to discover available WhatsApp and Telegram groups.</p>
+            </div>
+
+            <input
+                type="search"
+                id="stateSearch"
+                placeholder="Search for your state..."
+            >
+
+            <div id="communitiesList" class="jobs-grid">
+                <p>Loading communities...</p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; <span id="currentYear"></span> Job Hunters NG. All rights reserved.</p>
+        <p>Connecting Nigerians to Opportunities.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/communities.js"></script>
+
+</body>
+      </html>
